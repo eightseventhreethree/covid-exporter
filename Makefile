@@ -1,6 +1,6 @@
 CONTAINER_REPO=rushsimonson
 CONTAINER_NAME=covid-exporter
-CONTAINER_VERSION=0.0.1
+CONTAINER_VERSION=0.0.2
 CONTAINER_LINUX=$(CONTAINER_NAME)_linux
 CONTAINER_ARM=$(CONTAINER_NAME)_arm64
 DATETIME:=$(shell date '+%Y%m%d%H%M%S')
@@ -22,3 +22,6 @@ run-container:
 
 build-container:
 	docker build --no-cache -t $(CONTAINER_REPO)/$(CONTAINER_NAME):$(TAG_NAME) .
+
+build-multiarch:
+	docker buildx build --platform linux/arm/v7,linux/arm64/v8,linux/amd64 --no-cache -t $(CONTAINER_REPO)/$(CONTAINER_NAME):$(TAG_NAME) .
