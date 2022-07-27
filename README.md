@@ -1,6 +1,6 @@
 # covid-exporter for Prometheus
 
-Uses public API available here: https://corona.lmao.ninja
+Uses public API available here: https://disease.sh
 
 Values:
 ```
