@@ -8,7 +8,7 @@ from prometheus_client import start_http_server
 class CustomCollector(object):
     def collect(self):
         base_metric_name = "covid_19_"
-        covid_states = requests.get('https://corona.lmao.ninja/v2/states')
+        covid_states = requests.get('https://disease.sh/v3/covid-19/states')
         json_covid_states = covid_states.json()
         keys = json_covid_states[0].keys()
 
