@@ -2,7 +2,7 @@ name: Build multiarch containers
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   build:
