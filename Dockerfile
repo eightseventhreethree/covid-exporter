@@ -1,4 +1,4 @@
-FROM python:3.11.0b4-alpine3.15
+FROM python:3.12.0a7-alpine3.17
 MAINTAINER rush@ru8733.com
 
 ADD code /code
