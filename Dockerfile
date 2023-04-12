@@ -1,4 +1,4 @@
-FROM python:3.12.0a7-alpine3.17
+FROM python:3.12.0a7-slim-bullseye
 MAINTAINER rush@ru8733.com
 
 ADD code /code
