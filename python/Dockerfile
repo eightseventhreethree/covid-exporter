@@ -1,7 +1,7 @@
-FROM python:3.12.0a7-slim-bullseye
+FROM python:3.12.0b1-slim-bullseye
 LABEL maintainer="rush@ru8733.com"
 
-ADD code /code
+ADD . /code
 RUN pip install -r /code/pip-requirements.txt
 
 WORKDIR /code
