@@ -1,4 +1,7 @@
-# covid-exporter for Prometheus
+# covid-exporters for Prometheus
+
+# Go version was written to improve performance
+# Python is still functional
 
 Uses public API available here: https://disease.sh
 
@@ -16,6 +19,13 @@ Values:
 Label example:
 ```
 {state="Nebraska"}
+```
+
+Docker container images are prefixed in tag name with language:
+i.e:
+```
+docker pull rushsimonson/covid-exporter:go-${VERSION}
+docker pull rushsimonson/covid-exporter:py-${VERSION}
 ```
 
 An example Grafana dashboard for import is available in grafana folder.
