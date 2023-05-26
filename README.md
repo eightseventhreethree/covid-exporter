@@ -20,7 +20,7 @@ Label example:
 {state="Nebraska"}
 ```
 
-Go version was written to memory usage performance.
+Go version was written to reduce memory usage.
 
 Python version is still functional.
 
