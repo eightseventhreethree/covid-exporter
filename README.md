@@ -1,9 +1,8 @@
 # covid-exporters for Prometheus
 
-# Go version was written to improve performance
-# Python is still functional
-
 Uses public API available here: https://disease.sh
+
+
 
 Values:
 ```
@@ -20,6 +19,10 @@ Label example:
 ```
 {state="Nebraska"}
 ```
+
+Go version was written to memory usage performance.
+
+Python version is still functional.
 
 Docker container images are prefixed in tag name with language:
 i.e:
