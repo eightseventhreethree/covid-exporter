@@ -21,6 +21,7 @@ jobs:
         run: |
           cd python && \
           make build-multiarch
+
   build-go:
     runs-on: ubuntu-latest
     steps:
