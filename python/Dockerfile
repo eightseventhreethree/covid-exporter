@@ -1,8 +1,8 @@
-FROM python:3.12.0b4-slim-bookworm
+FROM python:3.12.1-slim-bookworm
 LABEL maintainer="rush@ru8733.com"
 
 ADD . /code
-RUN pip install -r /code/pip-requirements.txt && \
+RUN pip install --no-cache-dir -r /code/pip-requirements.txt && \
   apt-get autoclean && \
   rm -rf /var/lib/apt/lists/*
 
