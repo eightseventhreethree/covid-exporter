@@ -1,17 +1,17 @@
 # argument for Go version
-ARG GO_VERSION=1.20.3
+ARG GO_VERSION=1.21.6
 
 # STAGE 1: building the executable
-FROM golang:${GO_VERSION}-bullseye AS build
+FROM golang:${GO_VERSION}-bookworm AS build
 
-RUN apt update && apt install make
+RUN apt-get update && apt-get -y install make
 WORKDIR $GOPATH/src
 ADD . $GOPATH/src
 RUN make buildx-build
 
 
 # STAGE 2: build the container to run
-FROM gcr.io/distroless/static AS final
+FROM cgr.dev/chainguard/static:latest@sha256:bda736ff75ec4b76ecd120d6ccf0b9428419cf4568a5d786a7d77ba23a9f6992 AS final
 
 LABEL maintainer="rush@ru8733.com"
 USER nonroot:nonroot
