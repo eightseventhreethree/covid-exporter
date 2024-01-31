@@ -4,7 +4,8 @@ ARG GO_VERSION=1.21.6
 # STAGE 1: building the executable
 FROM golang:${GO_VERSION}-bookworm AS build
 
-RUN apt-get update && apt-get -y install make
+RUN apt-get update && apt-get --no-install-recommends -y install make && \
+  rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 WORKDIR $GOPATH/src
 ADD . $GOPATH/src
 RUN make buildx-build
@@ -17,7 +18,7 @@ LABEL maintainer="rush@ru8733.com"
 USER nonroot:nonroot
 
 # copy compiled app
-COPY --from=build --chown=nonroot:nonroot /go/src/out/covid-exporter /app
+COPY --from=build --chown=nonroot:nonroot --chmod=644 /go/src/out/covid-exporter /app
 
 # run binary; use vector form
 ENTRYPOINT ["/app"]
