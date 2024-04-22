@@ -1,0 +1,16 @@
+# docs: https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "gomod" # See documentation for possible values
+    directory: "/go" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip" # See documentation for possible values
+    directory: "/python" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "weekly"
