@@ -2,15 +2,19 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod" # See documentation for possible values
-    directory: "/go" # Location of package manifests
+  - package-ecosystem: "gomod"
+    directory: "/go"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/python" # Location of package manifests
+  - package-ecosystem: "pip"
+    directory: "/python"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "docker"
+    directory: "/go"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "/python"
     schedule:
       interval: "weekly"
