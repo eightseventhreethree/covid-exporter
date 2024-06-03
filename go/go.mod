@@ -3,7 +3,7 @@ module github.com/eightseventhreethree/covid-exporter/v2
 go 1.20
 
 require (
-	github.com/hashicorp/go-retryablehttp v0.7.6
+	github.com/hashicorp/go-retryablehttp v0.7.7
 	github.com/prometheus/client_golang v1.19.1
 )
 
