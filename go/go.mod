@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/hashicorp/go-retryablehttp v0.7.7
-	github.com/prometheus/client_golang v1.20.0
+	github.com/prometheus/client_golang v1.20.2
 )
 
 require (
