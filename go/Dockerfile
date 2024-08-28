@@ -11,7 +11,7 @@ RUN make buildx-build
 
 
 # STAGE 2: build the container to run
-FROM cgr.dev/chainguard/static:latest@sha256:5e9c88174a28c259c349f308dd661a6ec61ed5f8c72ecfaefb46cceb811b55a1 AS final
+FROM cgr.dev/chainguard/static:latest@sha256:791657dd88dea8c1f9d3779815429f9c681a9a2778fc66dac3fbf550e1f1d9c8 AS final
 
 LABEL maintainer="rush@ru8733.com"
 USER nonroot:nonroot
