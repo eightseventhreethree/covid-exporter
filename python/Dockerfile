@@ -1,4 +1,4 @@
-FROM python:3.13.1-slim-bookworm
+FROM python:3.13.2-slim-bookworm
 LABEL maintainer="rush@ru8733.com"
 
 ADD . /code
