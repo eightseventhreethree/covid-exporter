@@ -1,6 +1,6 @@
 CONTAINER_REPO=rushsimonson
 CONTAINER_NAME=covid-exporter
-CONTAINER_VERSION=py-0.0.16
+CONTAINER_VERSION=py-0.1.0
 CONTAINER_LINUX=$(CONTAINER_NAME)_linux
 CONTAINER_ARM=$(CONTAINER_NAME)_arm64
 
@@ -19,7 +19,7 @@ run-container:
 	docker run --detach --publish 8000:8000 --name $(CONTAINER_NAME) -it --restart always $(CONTAINER_REPO)/$(CONTAINER_NAME):$(CONTAINER_VERSION)
 
 build-container:
-	docker build --no-cache -t $(CONTAINER_REPO)/$(CONTAINER_NAME):$(CONTAINER_VERSION) .
+	docker build --load --no-cache -t $(CONTAINER_REPO)/$(CONTAINER_NAME):$(CONTAINER_VERSION) .
 
 build-multiarch:
 	docker buildx build --push --platform linux/arm64/v8,linux/amd64 --no-cache -t $(CONTAINER_REPO)/$(CONTAINER_NAME):$(CONTAINER_VERSION) .
